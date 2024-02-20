@@ -2,6 +2,7 @@
 import CountryList from "./components/CountryList";
 
 const Home = () => {
+
 	return (
 		<div id="home_page">
 
