@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
 	baseURL: "https://restcountries.com/v3.1"
 });
 
-class APIClient {
+class APIClient<T> {
 	endpoint: string;
 
 	constructor(endpoint: string) {
@@ -12,12 +12,12 @@ class APIClient {
 	}
 
 	getAll = (config?: AxiosRequestConfig) => {
-		return axiosInstance.get(this.endpoint, config).then((res) => res.data);
+		return axiosInstance.get<T>(this.endpoint, config).then((res) => res.data);
 	};
 
-	get = (id: string, appendUrl?: string) => {
+	get = (id: string) => {
 		return axiosInstance
-			.get(`${this.endpoint}${appendUrl ? `/${appendUrl}` : ""}/${id}`)
+			.get(`${this.endpoint}/${id}`)
 			.then((res) => res.data);
 	};
 }
