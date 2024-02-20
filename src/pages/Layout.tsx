@@ -1,10 +1,18 @@
+/* PLUGINS */
 import { Outlet } from "react-router-dom";
+
+/* COMPONENTS */
 import Navbar from "../components/Navbar";
 
+/* HOOKS */
+import useDarkMode from "../hooks/useDarkMode";
+
 const Layout = () => {
+	const { toggleDarkMode } = useDarkMode();
+
 	return (
 		<>
-			<Navbar />
+			<Navbar onDarkModeClick={toggleDarkMode} />
 			<Outlet />
 		</>
 	);

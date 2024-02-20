@@ -5,30 +5,23 @@
 *::before,
 *::after,
 p {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-    box-sizing: border-box;    
-    scroll-behavior: smooth;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-body{
-    background: #FAFAFA;
-    color: $text_black;
-    font-family: $font_primary;
+body {
+	background: #fafafa;
+	color: $text_black;
+	font-family: $font_primary;
 
-    &.dark{
-        background: #202C36;
-        color: $color_white;
-    }
-}
-
-
-._container {
-    margin: 0 auto;
-    max-width: $bp_lg;
-    width: 85%;
+	&.dark {
+		background: #202c36;
+		color: $color_white;
+	}
 }
