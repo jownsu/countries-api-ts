@@ -4,8 +4,13 @@
     @include container;
     
     display: grid;
-    gap: 75px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-items: center;
+    row-gap: 75px;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
     padding-bottom: 50px;
+
+    @media only screen and (max-width: $bp_md){
+        justify-items: center;
+        row-gap: 40px;
+    }
 }

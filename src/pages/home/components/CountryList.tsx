@@ -1,15 +1,15 @@
-/* PLUGINS */
-import { CircularProgress } from "@mui/material";
 
-/* HOOKS */
-import useCountry from "../../../hooks/useCountry"
+import useCountry from "../../../hooks/useCountry";
 import useCountryQuery from "../../../hooks/useCountryQuery";
 
 /* COMPONENTS */
 import CountryCard from "./CountryCard";
+import CountryCardSkeleton from "./CountryCardSkeleton";
 
 /* STYLES */
 import styles from "./CountryList.module.scss";
+
+const card_skeleton = [1, 2, 3, 4, 5, 6];
 
 const CountryList = () => {
     const countryQuery = useCountryQuery(state => state.countryQuery);
@@ -17,7 +17,7 @@ const CountryList = () => {
 
     return (
         <div className={styles.flags_container}>
-            { isLoading && <CircularProgress />}
+            { isLoading && card_skeleton.map(key => <CountryCardSkeleton key={key}/>) }
 
             {
                 !isLoading && countries?.map(country => {

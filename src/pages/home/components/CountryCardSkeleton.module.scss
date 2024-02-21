@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables";
+
+.card_skeleton{
+    background: $color_white;
+
+    >div{
+        padding: 19px 22px;
+    }
+}
+
+:global(.dark){
+    .card_skeleton{
+        background: $color_dark_1;
+    }
+}
