@@ -3,6 +3,7 @@ import { CircularProgress } from "@mui/material";
 
 /* HOOKS */
 import useCountry from "../../../hooks/useCountry"
+import useCountryQuery from "../../../hooks/useCountryQuery";
 
 /* COMPONENTS */
 import CountryCard from "./CountryCard";
@@ -11,7 +12,8 @@ import CountryCard from "./CountryCard";
 import styles from "./CountryList.module.scss";
 
 const CountryList = () => {
-    const { data: countries, isLoading } = useCountry();
+    const countryQuery = useCountryQuery(state => state.countryQuery);
+    const { data: countries, isLoading } = useCountry(countryQuery);
 
     return (
         <div className={styles.flags_container}>

@@ -12,8 +12,8 @@ const ErrorPage = () => {
         <div id={styles.error_page}>
             {
                 isRouteErrorResponse(error) 
-                ? <p>Page not found</p>
-                : <p>Something went wrong.</p>
+                    ? <p>Page not found</p>
+                    : <p>Something went wrong.</p>
             }
         </div>
     )

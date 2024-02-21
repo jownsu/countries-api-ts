@@ -7,12 +7,14 @@ import APIClient from "../services/apiClient";
 
 /* ENTITIES */
 import { Country } from "../entities/Country";
+import { CountryQuery } from "./useCountryQuery";
 
-const apiClient = new APIClient<Country[]>("/all");
 
-const useCountry = () => {
+const useCountry = (countryQuery: CountryQuery) => {
+    const apiClient = new APIClient<Country[]>(`/${countryQuery.key}/${countryQuery.value}`);
+
     return useQuery({
-        queryKey: ["countries"],
+        queryKey: ["countries", countryQuery],
         queryFn: apiClient.getAll,
         staleTime: ms("24h")
     });
