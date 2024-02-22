@@ -6,11 +6,12 @@
     display: grid;
     row-gap: 75px;
     column-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+    grid-template-columns: repeat(auto-fit, 264px);
     padding-bottom: 50px;
+    justify-content: space-between;
 
     @media only screen and (max-width: $bp_md){
-        justify-items: center;
+        justify-content: center;
         row-gap: 40px;
     }
 
