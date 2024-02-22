@@ -1,19 +1,22 @@
 /* PLUGINS */
 import { Link, useParams } from "react-router-dom";
 
+/* HOOKS */
+import useCountryDetails from "../../hooks/useCountryDetails";
+import useBorders from "../../hooks/useBorders";
+
 /* STYLES */
 import styles from "./Country.Details.module.scss";
-import useCountryDetails from "../../hooks/useCountryDetails";
 
 const CountryDetails = () => {
 
-	const { code} = useParams();
+	const { code } = useParams();
 	const { data } = useCountryDetails(code!);
+	const { data: border_countries } = useBorders(data?.borders || [], data?.cca3);
 
 	return (
 		<>
 			<Link to="/" className={styles.back_btn}><span></span>Back</Link>
-
 			{
 				data && (
 					<div className={styles.country_details}>
@@ -34,20 +37,18 @@ const CountryDetails = () => {
 									<p>Languages: <span>{Object.values(data.languages).join(", ")}</span></p>
 								</div>
 							</div>
-							{/* TODO */}
-							{/* <div className="country_borders">
+							<div className={styles.country_borders}>
 								<p>Border Countries:</p> 
 								<div>
-									{border_countries.map(country => (
-										<Link to={`/country/${country.code}`}>{country.label}</Link>
+									{border_countries?.map(country => (
+										<Link to={`/country/${country.cca3}`}>{country.name.common}</Link>
 									))}
 								</div>
-							</div> */}
+							</div>
 						</div>
 					</div>
 				)
 			}
-
 		</>
 	);
 };

@@ -26,5 +26,6 @@ export interface CountryDetails {
         }
     },
     capital: string[],
-    cca3: string
+    cca3: string,
+    borders: string[]
 }
