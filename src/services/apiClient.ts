@@ -15,10 +15,10 @@ class APIClient<T> {
 		return axiosInstance.get<T>(this.endpoint, config).then((res) => res.data);
 	};
 
-	get = (id: string, getFirstValue: boolean = false) => {
+	get = (id: string, getFirstValue: boolean = false, config?: AxiosRequestConfig) => {
 		return axiosInstance
-			.get(`${this.endpoint}/${id}`)
-			.then((res) => getFirstValue ? res.data[0] : res.data);
+			.get<T>(`${this.endpoint}/${id}`, config)
+			.then<T>((res) => getFirstValue && Array.isArray(res.data) ? res.data[0] : res.data);
 	};
 }
 

@@ -20,7 +20,11 @@ const useCountry = (countryQuery: CountryQuery) => {
 
     return useQuery<Country[], AxiosError<CountryQueryError>>({
         queryKey: ["countries", countryQuery],
-        queryFn: apiClient.getAll,
+        queryFn: () => apiClient.getAll({
+            params: {
+                fields: "name,population,region,capital,flags,cca3"
+            }
+        }),
         staleTime: ms("24h")
     });
 }

@@ -20,7 +20,15 @@ const useCountryDetails = (countryCode: string) => {
 
     return useQuery<CountryDetails, AxiosError<CountryQueryError>>({
         queryKey: ["countryDetails", countryCode],
-        queryFn: () => apiClient.get(countryCode, true),
+        queryFn: () => apiClient.get(
+            countryCode, 
+            true, 
+            {
+                params: {
+                    fields: "name,flags,population,region,subregion,tld,languages,currencies,capital,cca3,borders"
+                }
+            }
+        ),
         staleTime: ms("24h")
     });
 }
