@@ -13,7 +13,7 @@ interface Props {
 
 const CountryCard = ({ country }: Props) => {
     return (
-        <Link to={`country/${country.cca2}`} className={styles.flag_card}>
+        <Link to={`country/${country.cca3}`} className={styles.flag_card}>
             <img src={country.flags.png} alt={country.flags.alt} />
             <div>
                 <p className={styles.country_name}>{country.name.common}</p>

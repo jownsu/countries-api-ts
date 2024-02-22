@@ -7,5 +7,5 @@ export interface Country {
         png: string,
         alt: string
     },
-    cca2: string
+    cca3: string
 }

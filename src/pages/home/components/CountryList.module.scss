@@ -1,8 +1,6 @@
 @import "../../../assets/styles/mixins";
 
 .flags_container{
-    @include container;
-    
     display: grid;
     row-gap: 75px;
     column-gap: 20px;

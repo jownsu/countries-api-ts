@@ -25,3 +25,9 @@ body {
 		color: $color_white;
 	}
 }
+
+.container {
+	margin: 0 auto;
+	max-width: $bp_lg;
+	width: 85%;
+}

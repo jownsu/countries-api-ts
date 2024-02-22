@@ -21,7 +21,7 @@ const CountryList = () => {
 
             {
                 !isLoading && countries?.map(country => {
-                    return <CountryCard key={country.cca2} country={country} />
+                    return <CountryCard key={country.cca3} country={country} />
                 })
             }
 

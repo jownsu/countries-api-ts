@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 /* COMPONENTS */
 import Layout from "./pages/Layout";
 import Home from "./pages/home/Home";
-import CountryDetails from "./pages/CountryDetails";
+import CountryDetails from "./pages/details/CountryDetails";
 import ErrorPage from "./pages/error/ErrorPage";
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 				element: <Home />
 			},
 			{
-				path: "countries/:id",
+				path: "country/:code",
 				element: <CountryDetails />
 			}
 		]

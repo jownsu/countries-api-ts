@@ -13,7 +13,9 @@ const Layout = () => {
 	return (
 		<>
 			<Navbar onDarkModeClick={toggleDarkMode} />
-			<Outlet />
+			<div className="container">
+				<Outlet />
+			</div>
 		</>
 	);
 };
