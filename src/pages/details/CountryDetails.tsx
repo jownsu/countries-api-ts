@@ -17,14 +17,14 @@ const CountryDetails = () => {
     const { data: country, isLoading } = useCountryDetails(code!);
 	
 	return (
-		<>
+		<div className={styles.container}>
 			<Link to="/" className={styles.back_btn}><span></span>Back</Link>
 			{
 				isLoading
 					? <CountrySkeleton />
 					: <Country country={country} />
 			}			
-		</>
+		</div>
 	);
 };
 
