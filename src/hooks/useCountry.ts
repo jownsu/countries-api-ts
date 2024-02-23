@@ -3,6 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import { AxiosError } from "axios";
 
+/* DATA */
+import countries from "../data/countries";
+
 /* API */
 import APIClient from "../services/apiClient";
 
@@ -25,7 +28,8 @@ const useCountry = (countryQuery: CountryQuery) => {
                 fields: "name,population,region,capital,flags,cca3"
             }
         }),
-        staleTime: ms("24h")
+        staleTime: ms("24h"),
+        initialData: countries
     });
 }
 
