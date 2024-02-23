@@ -1,0 +1,34 @@
+.country_skeleton{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+
+    .img{
+        flex: 1;
+        height: 264px;
+        max-width: 560px;
+    }
+
+    .details_container{
+        flex: 1;
+        max-width: 575px;
+
+        .country_name{
+            margin-bottom: 20px;
+            width: 40%;
+        }
+
+        .details{
+            column-gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 5px;
+
+            > span {
+                width: 100%;
+            }
+        }
+    }
+}

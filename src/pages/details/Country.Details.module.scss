@@ -11,6 +11,7 @@
     gap: 10px;
     height: 40px;
     justify-content: center;
+    margin-bottom: 75px;
     outline: none;
     text-decoration: none;
     width: 136px;
@@ -29,106 +30,6 @@
     }
 }
 
-.country_details{
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-between;
-    margin-top: 75px;
-    @media only screen and (max-width: $bp-sm){
-        margin-top: 65px;
-    }
-    img{
-        border-radius: 10px;
-        height: auto;
-        max-width: 560px;
-        object-fit: contain;
-        width: 100%;
-    }
-    > div{
-        width: 575px;
-
-        @media only screen and (max-width: $bp_md) {
-            margin: initial;
-        }
-
-        .country_name{
-            font: 800 32px/43.65px $font_primary;
-            margin-bottom: 20px;
-            @media only screen and (max-width: $bp-sm){
-                margin-bottom: 15px;
-            }
-        }
-
-        .country_info{
-            column-gap: 20px;
-            display: flex;
-            
-            @media only screen and (max-width: $bp_md) {
-                flex-direction: column;
-            }
-
-            >div{
-                flex: 1;
-            }
-
-
-            p{
-                font: 600 16px/32px $font_primary;
-                span{
-                    font-weight: 300;
-                }
-
-                @media only screen and (max-width: $bp_md) {
-                    &:nth-of-type(6){
-                        margin-top: 33px;
-                    }
-                }
-                
-            }
-        }
-
-        .country_borders{
-            align-items: center;
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            row-gap: 10px;
-
-            @media only screen and (max-width: $bp-sm){
-                margin-top: 35px;
-                row-gap: 18px;
-            }
-
-            p{
-                font: 600 16px/24px $font_primary;
-                margin-right: 16px;
-            }
-            >div{
-                display: flex;
-                flex-wrap: wrap;
-                row-gap: 10px;
-                a{
-                    border-radius: 2px;
-                    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
-                    color: $text_black;
-                    display: block;
-                    display: grid;
-                    font: 300 14px/19.1px $font_primary;
-                    height: 28px;
-                    margin-right: 10px;
-                    min-width: 96px;
-                    padding: 0 20px;
-                    place-items: center;
-                    text-decoration: none;
-                    width: fit-content;
-                }
-            }
-        }
-    }
-}
-
 :global(.dark){
     .back_btn{
         background: $color_dark_1;
@@ -136,17 +37,6 @@
         
         span{
             background-image: url("/images/back_dark.svg");
-        }
-    }
-
-    .country_details{
-        .country_borders{
-            >div{
-                a{
-                    background: $color_dark_1;
-                    color: $color_white;
-                }
-            }
         }
     }
 }
